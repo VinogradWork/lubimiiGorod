@@ -1,0 +1,339 @@
+
+
+//====================================================================================================
+
+.d-banner {
+	padding-top: 140px;
+	padding-bottom: 90px;
+	@media (max-width:$mobile-middle+px) {padding-top: 107px;padding-bottom: 20px;}
+}
+
+.d-banner-content {
+
+}
+.d-banner-column {
+
+border-radius: 10px;
+@include flexbox();
+background: url(../img/ba1255.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 80px);
+    max-height: 660px;
+flex-direction: column;
+justify-content: center;
+padding: 0 7%;
+@media (max-width:$mobile-big+px) {max-height: 510px;}
+@media (max-width:$mobile-middle+px) {max-height: 410px;}
+}
+.d-banner-column__subtitle { @include flexbox; align-items: flex-end;
+	img {width: 53px; height: 53px; margin-right: 10px;}
+	p {color: #D13A52;font-size: 24px;}
+}
+.d-banner-column__title {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 65px;
+	color: #0B0B0B;
+	margin-top: 10px;
+	width: 70%;
+	@media (max-width:1024px) {
+		width: 75%;
+	}
+	@media (max-width:$mobile-big+px) {
+		font-size: 45px;
+		width: 100%;
+	}
+	@media (max-width:$mobile-middle+px) {
+font-size: 30px;
+margin-top: 5px;
+	}
+}
+.d-banner-column__small-text {
+	font-family: Proxima Nova;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 29px;
+margin-top: 9px;
+color: #323232;
+@media (max-width:$mobile-middle+px) {
+font-size: 14px;margin-top: 5px;
+}
+}
+.d-banner-column__text {
+	font-family: Proxima Nova;
+font-style: normal;
+font-weight: normal;
+font-size: 40px;
+color: #323232;
+margin-top: 20px;
+margin-bottom: 84px;
+@media (max-width:$mobile-big+px) {font-size: 35px;}
+@media (max-width:$mobile-middle+px) {
+font-size: 18px;margin-top: 15px; margin-bottom: 58px;
+}
+}
+
+
+//====================================================================================================
+.d-formats {
+	.container {
+		@media (max-width:$mobile-big+px) {
+			padding: 0;
+		}
+		
+	}
+}
+
+.d-documents { 
+	.block { position: relative;
+		&:before {
+			content: '';
+			border-top: 1px solid #323232;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0.6;
+			height: 1px;
+			width: 100%;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			border-bottom: 1px solid #323232;
+			bottom: 0;
+			left: 0;
+			opacity: 0.6;
+			height: 1px;
+			width: 100%;
+		}
+	}
+	
+}
+.d-title {
+	margin: 0 0 60px;
+	@media (max-width:$mobile-big+px) {
+		margin: 0 0 40px 0;
+	}
+	@media (max-width:$mobile-big+px) {
+		margin: 0 0 20px 0;
+	}
+}
+
+.d-formats-wrap {
+	background: #EDEDED;
+	border-radius: 10px;
+}
+
+.d-formats-row {
+	display: flex;
+	padding: 45px 44px 20px 63px;
+	justify-content: space-between;
+
+	@media (max-width: $tablet+px) {
+		flex-direction: column-reverse;
+	}
+
+	@media (max-width: $mobile-big+px) {
+		padding: 25px 24px 10px ;
+	}
+
+	@media (max-width: $mobile-middle+px) {
+		padding: 5px 21px 5px;
+	}
+}
+
+.d-formats-column {
+	display: flex;
+	flex-direction: column;
+	width: 65%;
+
+	@media (max-width: $tablet+px) {
+		width: 100%;
+	}
+
+	&:first-child {
+		width: 35%;
+		margin-right: 25px;
+
+		@media (max-width: $tablet+px) {
+			width: 100%;
+		}
+	}
+}
+
+.d-formats-column__title {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 150%;
+	color: #000000;
+	margin-bottom: 10px;
+	width: fit-content;
+	@media (max-width: $tablet+px) {
+		margin-top: 20px;
+	}
+}
+
+.d-formats-column__body {
+	background: url(../img/schema.jpg);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-shadow: 0px 20px 22px rgba(0, 0, 0, 0.02);
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+
+	@media (max-width: $tablet+px) {
+		height: 65vw;
+	}
+	@media (max-width: $mobile-big+px) {
+		height: 75vw;
+	}
+	@media (max-width: $mobile-big+px) {
+		background: url(../img/schem.jpg);
+		background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	}
+}
+
+.d-formats-column__bottom-title {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 150%;
+	color: #000000;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.d-formats-column__bottom-list {
+	li {
+		font-family: Proxima Nova;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 135%;
+		color: #000000;
+		margin-bottom: 5px;
+	}
+
+}
+
+.d-table-wrap {
+	display: block;
+	overflow-x: hidden;
+	max-width: 100%;
+}
+
+.d-formats-column__table {
+	display: table;
+	font-size: 0;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	background: #FFFFFF;
+	box-shadow: 0px 20px 22px rgb(0 0 0 / 2%);
+	border-radius: 5px;
+	height: 483px;
+	@media (max-width: $mobile-big+px) {
+		height: 245px;
+	}
+
+	.d-formats__table-row {
+		background: #FFFFFF;
+		height: 68px;
+		@media (max-width: $mobile-big+px) {
+			height: 45px;
+		}
+		@media (max-width: $mobile-middle+px) {
+			height: 25px;
+		}
+
+		&:nth-child(2n) {
+			background: #FFDAE0;
+		}
+
+		td {
+			font-family: Proxima Nova;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 24px;
+			line-height: 150%;
+			color: #000000;
+			border-right: 0.5px solid #B3B3B3;
+			padding: 10px;
+
+			&:nth-child(4) {
+				border-right: 0;
+			}
+
+			@media (max-width:$tablet-big+px) {
+				padding: 8px;
+				font-size: 21px;
+				@media (max-width: $mobile-big+px) {
+					padding: 2px;
+					font-size: 14px;
+				}
+				@media (max-width: $mobile-small+px) {
+					padding: 0;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+
+}
+
+//====================================================================================================
+
+
+
+.d-works {
+	
+}
+
+.d-works-sub {
+    font-family: Proxima Nova;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+color: #323232;
+padding: 47px 0 36px 0;
+a {
+    font-weight: 700;
+    color: #323232;
+}
+}
+.d-works-block {
+    background: #D13A52;
+box-shadow: -10px 22px 20px rgba(0, 0, 0, 0.02);
+border-radius: 15px;
+@include flexbox;
+justify-content: space-evenly;
+align-items: center;
+height: 121px;
+@media (max-width: $mobile-big+px) {display: none;}
+}
+.d-works-block__title {
+    font-family: Proxima Nova;
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+text-align: center;
+color: #FFFFFF;
+}
+
+
+//====================================================================================================
+
+

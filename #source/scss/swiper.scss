@@ -1,0 +1,260 @@
+
+.image-slider, .block-slider {
+    padding: 0 0 35px;
+	margin: 0 auto;
+}
+.image-slider__wrapper {
+  
+}
+.image-slider__slide {
+//	width: 462px !important;
+
+}
+
+
+.image-slider__image {
+	text-align: center;
+}
+.image-slider__image img {
+    // max-height: 342px;
+	max-width: 100% ;
+}
+
+/* Стрелки */
+
+
+.swiper__buttons {
+   @include flexbox;
+    width: 100%;
+    justify-content: space-between;
+}
+.swiper-button-prev,
+.swiper-button-next {
+	position: relative;
+}
+
+
+.swiper-button-prev {
+    left: 0%;
+    right: auto;
+    width: 67px;
+    height: 67px;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.13);
+    @include trxy(-35px, 200px);
+    &.swiper-button-prev::after {
+        content: ''; 
+        background: url("../img/icons/leftArrow.svg");
+        width: 67px;
+        height: 67px;
+        background-size: contain;
+        position: absolute;
+    }
+
+}
+
+.swiper-button-next {
+    right: 0%;
+    left: auto;
+    width: 67px;
+    height: 67px;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.13);
+    @include trxy(35px, 200px);
+    &.swiper-button-next::after {
+        content: ''; 
+        background: url("../img/icons/leftArrow.svg");
+        width: 67px;
+        height: 67px;
+        background-size: contain;
+        position: absolute;
+        @include rotate(180deg);
+    }
+}
+
+
+/* Автоширина */
+// .image-slider .swiper-slide {
+// 	 width: auto !important; 
+// }
+
+ .swiper-button-prev::after,
+.swiper-button-next::after {
+	content: ''; 
+}
+
+
+/* Пагинация */
+.image-slider .swiper-pagination,
+.block-slider .swiper-pagination
+ {
+	bottom: 0;
+}
+
+.swiper-pagination-bullet {
+width: 30px;
+height: 6px;
+
+background:#C4C4C4;
+border-radius: 5px;
+&-active {
+	background: #D13A52;
+}
+}
+
+//====================================================================================================
+.block-slider-suitableFor {
+    height: 750px;
+    @media (max-width: $tablet+px) {
+         height: 100%;
+    }
+    .block-slider__slide, {
+        overflow: hidden;
+        height: calc((100% - 30px) / 2);
+        @media (max-width: $tablet+px) {
+             height: auto;
+            }
+    }
+}
+    .image-slider-partners {
+        height: 500px;
+        @media (max-width: $tablet+px) {
+            height: 100%;
+        }
+    .image-slider__slide {overflow: hidden;
+            height: calc((100% - 50px) / 2);
+        @media (max-width: $tablet+px) {
+            height: auto;
+        }
+        &:nth-of-type(2n) {
+
+            transform: translate(50%, 20px);
+            @media (max-width: $tablet+px) {
+                transform: translate(0, 0);
+            }
+        }
+        }
+    }
+
+.block-slider-suitableFor .block-slider__block {
+   
+    .block-title__slider {color: #fff; display: flex; height: 25%; align-items: center;}
+    .image-slider__image { 
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: cover !important;
+        border-radius: 5px;
+        &.suitable-image-1 {
+            background: url(../img/image190.jpg);
+            
+        }
+        &.suitable-image-2 {
+            background: url(../img/1-Fitnes-klub1.jpg);
+            
+        }
+        &.suitable-image-3  {
+            background: url(../img/image187.jpg);
+            
+        }
+        &.suitable-image-4 {
+            background: url(../img/Remont-salona-krasoty.jpg);
+            
+        }
+        &.suitable-image-5{
+            background: url(../img/img0091.jpg);
+            
+        }
+        &.suitable-image-6 {
+            background: url(../img/image178.jpg);
+            
+        }
+        &.suitable-image-7 {
+            background: url(../img/image179.jpg);
+           
+        }
+        &.suitable-image-8 {
+            background: url(../img/image196.jpg);
+           
+        }
+        }
+    height: 367px;
+    background: #D13A52;
+    box-shadow: 0px 22px 20px rgba(0, 0, 0, 0.02);
+    @media (max-width:$mobile-middle+px) {
+        height: 311px;
+        }
+}
+.block-slider-lifts .block-slider__block {
+    height: 339px;
+    @media (max-width:$mobile-middle+px) {
+        height: 189px;
+        }
+}
+.block-slider-corporation .block-slider__block {
+    height: 339px;
+    &:hover{
+        @include anim(.6s, 0s);
+        background-color: #D13A52;
+        .block-title__slider{color: #fff;} 
+        .block-text__slider.block-text__slider {color: #fff;}
+        svg path {fill:#fff;}
+    }
+    @media (max-width:$mobile-middle+px) {
+        height: 225px;
+        }
+}
+
+
+.block-slider__block {
+    min-width: 100%;
+background: #FFFFFF;
+box-shadow: 0px 22px 20px rgba(0, 0, 0, 0.02);
+border-radius: 5px;
+@include flexbox;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+text-align: center;
+
+}
+.block-title__slider {
+    font-family: Proxima Nova;
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+color: #D13A52;
+@media (max-width:$tablet+px) {
+    font-size: 24px;
+}
+@media (max-width:$mobile-middle+px) {
+    font-size: 18px;
+}
+}
+
+.block-text__slider {
+    font-family: Proxima Nova;
+font-style: normal;
+font-weight: normal;
+font-size: 22px;
+color: #3C3C3C;
+@media (max-width:$tablet+px) {
+    font-size: 18px;
+}
+@media (max-width:$mobile-middle+px) {
+    font-size: 14px;
+}
+}
+
+
+
+//====================================================================================================
+
+
+
+
+
+//====================================================================================================

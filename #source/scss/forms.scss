@@ -1,0 +1,268 @@
+//<FORM (a.f+tab)>====================================================================================================
+
+//</FORM>====================================================================================================
+
+//<BUTTONS (a.btn+tab)>====================================================================================================
+.btn{
+	display: flex;
+	padding: 0px 0px;
+	background: #D13A52;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: fit-content;
+	height: fit-content;
+	cursor: pointer;
+	text-align: center;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	&:hover{@include anim(.5s, 0s)}
+	&.fw{width: 100%;}
+	
+	&--footer {
+		border-radius: 5px;
+		
+
+		font-size: 14px;
+		line-height: 150%;
+		text-align: center;
+		color: #FFFFFF;
+		max-height: 25px;
+		width: 117px;
+		position: absolute;
+   		right: 15%;
+		   &:hover {
+			background: #FFFFFF;
+			color: #D13A52;
+			border: 0.5px solid #D13A52;
+			
+		   }
+		   @media (max-width: $mobile-middle+px) { right: 0}
+	}
+	&--number {
+	box-shadow: 0px 0px 20px 0px #d13a52;
+    border-radius: 100%;
+    padding: 15px;
+    position: absolute;
+    right: -5%;
+	&:hover {
+		@include scale(1.1);
+	   }
+	@media (max-width: $mobile-middle+px) { display: none;}
+	}
+	&--consultation {
+		background: #FFFFFF;
+		border-radius: 5px;
+		font-family: Proxima Nova;
+
+font-size: 18px;
+line-height: 150%;
+color: #D13A52;
+padding: 17px 25px;
+&:hover {
+	background: #FFE7EA;
+		}
+	}
+&--banner {
+	border-radius: 5px;
+	font-family: Proxima Nova;
+width: 251px;
+height: 60px;
+font-size: 18px;
+line-height: 150%;
+color: #fff;
+box-shadow: (0px 15px 30px rgba(209, 58, 82, 0.25));
+@media (max-width: $mobile-middle+px) { width:100%}
+&:hover {
+	color: #D13A52;
+	background-color: #fff;
+}
+	}
+}
+//</BUTTONS>====================================================================================================
+
+
+//</SELECT>====================================================================================================
+
+//<INPUT (inp+tab)>====================================================================================================
+input[type=text],input[type=email],input[type=tel],textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+// .input{
+// 	border-radius: 0 !important;
+// 	width: 100%;
+// 	display: block;
+// 	padding: 0px 20px;
+// 	&.focus{}
+// 	&.err{}
+// }
+textarea{
+	resize:none;
+	padding: 0px 0px;
+}
+//</INPUT>====================================================================================================
+
+
+.form {
+	-webkit-overflow-scrolling: touch;
+	background-color: rgba(0,0,0,0.8);
+	opacity: 0;
+	visibility: hidden;
+	position: fixed!important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	z-index: 100;
+	margin: 0 auto;
+	padding-top: 80px;
+	@include anim(0.8s, 0s);
+	&.open{opacity: 1;
+		visibility: visible;
+		.form__content{@include scale(1);}
+	}
+}
+.form__area {
+	
+}
+.form__body {
+	min-height: 100%;
+	@include anim(0.8s, 0s);
+    @include flexbox;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	
+
+}
+
+.form__content {
+	@include scale(0);
+	@include anim(0.8s, 0s);
+	@include flexbox;
+	flex-direction: column;
+	position: relative;
+	margin: 0px auto;
+    padding: 30px 54px 50px;
+	max-width: 476px;
+background: #FFFFFF;
+@media (max-width:$mobile-middle+px) {padding: 30px 15px 50px;}
+}
+
+.form__title {
+	font-size: 40px;	
+	padding-bottom: 23px;
+}
+.form__item {
+	margin-bottom: 10px;
+	@include flexbox;
+	flex-direction: column;
+	background: #FFFFFF;
+border: 1px solid #DFDFDF;
+box-sizing: border-box;
+box-shadow: inset 0px 5px 20px rgba(0, 0, 0, 0.05);
+border-radius: 5px;
+padding: 7px 0 11px 19px;
+min-height: 59px;
+&:last-of-type {
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	box-shadow: none;
+	padding: 0;
+}
+}
+.form__label {
+	font-family: Proxima Nova;
+font-size: 14px;
+line-height: 17px;
+color: #848484;
+text-align: left;
+}
+.form__input {
+	font-family: Proxima Nova;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+@media (max-width:$mobile-middle+px) {font-size: 14px;}
+}
+.checkbox__input {
+	display: none;
+	
+	}
+	.checkbox__input:checked + .checkbox__label:after {
+		@include scale(1);
+	}	
+	
+.checkbox__label {
+	display: inline-flex;
+	align-items: center;
+	font-family: Proxima Nova;
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 17px;
+text-align: left;
+color: #000000;
+position: relative;
+cursor: pointer;
+&:before {
+	content: '';
+
+	flex: 0 0 17px;
+	height: 17px;
+	background-color: #D13A52;
+	margin-right: 10px;
+}
+&:after {
+	@include anim(0.5s, 0s);
+	content: '';
+    position: absolute;
+    background: url(../img/icons/check.svg);
+  //  top: 8px;
+    background-position: center;
+    left: 1px;
+    width: 17px;
+    height: 17px;
+    background-repeat: no-repeat;
+
+	// width: 16px;
+	// height: 16px;
+	// top: 4px;
+	// left: 4px;
+	// background-color: #fff;
+	// border-radius: 5px;
+	@include scale(0);
+}
+
+a {
+	font-family: Roboto;
+	color: #D13A52;
+}
+
+}
+.form__button {
+	background: #D13A52;
+width: max-content;
+color: white;
+width: 100%;
+height: 57px;
+} 
+
+
+.form__close {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	
+}
+.form__close-x {
+	font-size: 30px;
+    align-self: flex-end;
+    position: absolute;
+    top: 0;
+}

@@ -1,0 +1,29 @@
+<div id="form" class="form">
+    <a href="#header" class="form__close"></a>
+    <div class="form__body">
+        <div class="form__content">
+        <a href="#header" class="form__close-x">x</a>
+            <div class="form__title"></div>
+        <div class="form__item">
+            <label for="formName" class="form__label">Ваше имя</label>
+            <input type="text" name="name" class="form__input" id="formName" required placeholder="Александров Александр Александрович">
+        </div>
+        <div class="form__item">
+            <label for="formTel" class="form__label">Номер телефона</label>
+            <input type="tel" name="tel" class="form__input" id="formTel" required>
+        </div>
+        <div class="form__item">
+            <label for="formMessage" class="form__label">Сообщение</label>
+            <textarea name="message" class="form__input" id="formMessage"></textarea> 
+        </div>
+        <div class="form__item">
+            <input type="checkbox" name="agreement" id="formAgreement" class="checkbox__input">
+            <label for="formAgreement" class="checkbox__label"><span>Отправляя любую форму на сайте, вы соглашаетесь с <a href="#">политикой конфиденциальности</a> данного сайта.</span></label>
+        </div>
+        <input type="hidden" id="tema">
+        <input type="hidden" id="page" value="index.html">
+        <button onclick="feedback();" type="submit" class="btn form__button">Отправить</button>
+        </div>
+        
+    </div>
+</div>

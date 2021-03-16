@@ -1,0 +1,337 @@
+header {
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 300;
+	background: #D13A52;
+	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.03);
+	padding: 0 10px
+}
+
+//====================================================================================================
+
+.header {
+	@include flexbox;
+	justify-content: space-around;
+	align-items: center;
+	height: 80px;
+
+	@media (max-width:$tablet+px) {
+		display: none;
+	}
+}
+
+.header-logo {
+	position: relative;
+	display: block;
+	text-align: center;
+	z-index: 5;
+
+	@media (max-width:$tablet+px) {
+		margin: 0 auto;
+
+		&.active {
+			margin: 0;
+		}
+	}
+
+	&img {
+		display: inline-block;
+		margin: auto;
+	}
+}
+
+.header-menu {
+	@include flexbox();
+	justify-content: space-between;
+}
+
+.header-menu__list {
+	@include flexbox();
+	justify-content: space-between;
+	list-style-type: none;
+
+	@media (max-width:$tablet+px) {}
+
+	.header-menu__link {
+		a {
+			font-family: Proxima Nova;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 34px;
+			line-height: 41px;
+			text-align: center;
+			color: #FFFFFF;
+
+			@media (max-width:$desctop+px) {
+				font-size: 27px;
+			}
+
+			@media (max-width:$tablet-big+px) {
+				font-size: 19px;
+			}
+
+			@media (max-width:$tablet+px) {
+				font-size: 20px;
+			}
+
+			position: relative;
+
+			&:hover {
+				opacity: 1;
+
+				&:before {
+					content: '';
+					position: absolute;
+					display: block;
+					height: 5px;
+					border-radius: 5px;
+					bottom: 0;
+					width: 100%;
+					background: #fff;
+					margin-bottom: -10px;
+
+					@media (max-width:$tablet+px) {
+						height: 3px;
+					}
+				}
+			}
+		}
+
+		position: relative;
+		padding-right: 34px;
+
+		@media (max-width:$desctop+px) {
+			padding-right: 23px;
+		}
+
+		@media (max-width:$tablet-big+px) {
+			padding-right: 18px;
+		}
+
+		@media (max-width:$tablet+px) {
+			font-size: 20px;
+		}
+	}
+}
+
+.header-callback {
+	@include flexbox;
+	align-items: center;
+}
+
+.header-callback__icon-tel {
+	background: url(../img/icons/telmenu.svg), #fff;
+	border-radius: 100%;
+	width: 44px;
+	height: 44px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 24px;
+	z-index: 5;
+
+	@media (max-width:$desctop+px) {
+		margin-right: 18px;
+	}
+
+	@media (max-width:$tablet-big+px) {
+		margin-right: 8px;
+		width: 37px;
+		height: 37px;
+	}
+
+	@media (max-width:$tablet+px) {
+		background-color: transparent;
+		position: absolute;
+		right: 3%;
+		top: 22%;
+	}
+
+	&.active {
+		display: none;
+	}
+}
+
+.header-callback__number {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 32px;
+	text-align: right;
+	color: #FFFFFF;
+
+	@media (max-width:$desctop+px) {
+		font-size: 24px;
+	}
+
+	@media (max-width:$tablet-big+px) {
+		font-size: 16px;
+	}
+}
+
+
+
+//====================================================================================================
+.header__menu {
+	display: none;
+}
+
+@media (max-width:$tablet+px) {
+	.header__menu {
+		@include flexbox();
+		height: 80px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: #D13A52;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		text-align: center;
+		padding: 0 20px;
+
+		&:after {
+			content: '';
+			top: 0;
+			position: absolute;
+			left: 0;
+			background-color: #D13A52;
+			width: 100%;
+			height: 70px;
+			z-index: 1;
+
+		}
+	}
+
+	.menu__body {
+		overflow: auto;
+		position: fixed;
+		top: 0;
+		left: -100%;
+		align-items: center;
+		padding: 40px 20px 80px;
+		width: 100%;
+		height: 100%;
+		transition: 0.3s all;
+		flex-direction: column;
+		background: #D13A52;
+		margin-top: 80px;
+
+		&:after {
+			content: '';
+			top: 0;
+			position: absolute;
+			left: 0;
+			background-color: #D13A52;
+			width: 100%;
+			height: 100vh;
+			z-index: 1;
+
+		}
+
+		&.active {
+			left: 0;
+
+		}
+	}
+
+	.header-menu__list {
+		flex-direction: column;
+		align-items: flex-start;
+
+		.header-menu__link {
+			z-index: 2;
+
+			a {}
+		}
+	}
+
+	.header-callback__number {
+		font-size: 28px;
+		line-height: 150%;
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+
+	.menu-mail {
+		font-family: Proxima Nova;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 24px;
+		display: flex;
+		align-items: center;
+		letter-spacing: 0.02em;
+		text-decoration-line: underline;
+		z-index: 2;
+		color: #FFFFFF;
+		position: relative;
+	}
+
+	.menu-address {
+		font-family: Proxima Nova;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 150%;
+		z-index: 2;
+		text-align: left;
+
+		position: relative;
+		color: #FFFFFF;
+	}
+
+	// Стиль иконки бургера
+	.icon-menu {
+		display: block;
+		position: absolute;
+		width: 33px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+
+		span {
+			@include anim(2s, 0s);
+			top: 8px;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #fff;
+
+			&:first-child {
+				width: 27px;
+				top: 0px;
+			}
+
+			&:last-child {
+				top: auto;
+				bottom: 0px;
+				width: 16.5px;
+			}
+		}
+
+		&.active {
+			right: 1%;
+
+			span {
+				@include scale(0);
+
+				&:first-child {
+					@include rotate(-45deg);
+					top: 8px;
+					width: 100%;
+				}
+
+				&:last-child {
+					@include rotate(45deg);
+					bottom: 8px;
+					width: 100%;
+				}
+			}
+		}
+	}
+}

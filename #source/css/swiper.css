@@ -1,0 +1,45 @@
+@charset "UTF-8";
+.d-works {
+  padding: 30px 0 50px 0;
+}
+
+.image-slider {
+  padding-bottom: 35px;
+  margin: 0 auto;
+}
+
+.image-slider__image {
+  text-align: center;
+}
+
+.image-slider__image img {
+  max-width: 100%;
+}
+
+/* Стрелки */
+.image-slider .swiper-button-prev {
+  background: url("../img/icons/leftArrow.svg") no-repeat center;
+  overflow: hidden;
+}
+
+.image-slider .swiper-button-next {
+  background: url("../img/icons/rightArrow.svg") no-repeat center;
+  overflow: hidden;
+}
+
+/* Автоширина */
+.image-slider .swiper-button-prev::after,
+.image-slider .swiper-button-next::after {
+  content: "";
+}
+
+/* Пагинация */
+.swiper-pagination-bullet {
+  width: 30px;
+  height: 6px;
+  background: #C4C4C4;
+  border-radius: 5px;
+}
+.swiper-pagination-bullet-active {
+  background: #D13A52;
+}
